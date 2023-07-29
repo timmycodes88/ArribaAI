@@ -6,7 +6,15 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Sidebar from '@/components/Sidebar'
 import useHydrated from '@/hooks/useHydrated'
 
-export default function MobileSideBar() {
+interface MobileSideBarProps {
+  apiLimitCount: number
+  isPro: boolean
+}
+
+export default function MobileSideBar({
+  apiLimitCount = 0,
+  isPro = false,
+}: MobileSideBarProps) {
   if (useHydrated())
     return (
       <Sheet>
@@ -16,7 +24,7 @@ export default function MobileSideBar() {
           </Button>
         </SheetTrigger>
         <SheetContent side='left' className='p-0'>
-          <Sidebar />
+          <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
         </SheetContent>
       </Sheet>
     )

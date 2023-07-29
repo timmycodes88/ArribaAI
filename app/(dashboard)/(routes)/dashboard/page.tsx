@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-const tools = routes.filter(
+export const tools = routes.filter(
   ({ href }) => href !== '/dashboard' && href !== '/settings'
 )
 
