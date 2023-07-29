@@ -1,14 +1,10 @@
 'use client'
 
-import { routes } from '@/components/Sidebar'
 import { Card } from '@/components/ui/card'
+import { tools } from '@/constants'
 import { cn } from '@/lib/utils'
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-
-export const tools = routes.filter(
-  ({ href }) => href !== '/dashboard' && href !== '/settings'
-)
 
 export default function DashboardPage() {
   const router = useRouter()

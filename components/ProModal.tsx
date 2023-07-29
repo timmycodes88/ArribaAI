@@ -10,13 +10,13 @@ import {
   DialogTitle,
 } from './ui/dialog'
 import { Badge } from './ui/badge'
-import { tools } from '@/app/(dashboard)/(routes)/dashboard/page'
 import { Card } from './ui/card'
 import { cn } from '@/lib/utils'
 import { Check, Zap } from 'lucide-react'
 import { Button } from './ui/button'
 import StripeAPI from '@/apis/StripeAPI'
 import { useState } from 'react'
+import { tools } from '@/constants'
 
 export default function ProModal() {
   const proModal = useProModal()

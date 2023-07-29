@@ -1,72 +1,14 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import {
-  Code,
-  ImageIcon,
-  LayoutDashboard,
-  MessageSquare,
-  Music,
-  Settings,
-  VideoIcon,
-} from 'lucide-react'
 import { Montserrat } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import FreeCounter from './FreeCounter'
+import { routes } from '@/constants'
 
 const montserrat = Montserrat({ weight: '600', subsets: ['latin'] })
-
-export const routes = [
-  {
-    label: 'Dashboard',
-    icon: LayoutDashboard,
-    href: '/dashboard',
-    color: 'text-sky-500',
-    bgColor: 'bg-sky-500/10',
-  },
-  {
-    label: 'Chat',
-    icon: MessageSquare,
-    href: '/chat',
-    color: 'text-violet-500',
-    bgColor: 'bg-violet-500/10',
-  },
-  {
-    label: 'Imagine',
-    icon: ImageIcon,
-    href: '/imagine',
-    color: 'text-pink-700',
-    bgColor: 'bg-pink-700/10',
-  },
-  {
-    label: 'Motion',
-    icon: VideoIcon,
-    href: '/video',
-    color: 'text-orange-700',
-    bgColor: 'bg-orange-700/10',
-  },
-  {
-    label: 'Sound',
-    icon: Music,
-    href: '/music',
-    color: 'text-emerald-500',
-    bgColor: 'bg-emerald-500/10',
-  },
-  {
-    label: 'Code',
-    icon: Code,
-    href: '/code',
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10',
-  },
-  {
-    label: 'Settings',
-    icon: Settings,
-    href: '/settings',
-  },
-]
 
 interface SidebarProps {
   apiLimitCount: number
