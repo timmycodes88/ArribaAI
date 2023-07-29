@@ -22,6 +22,7 @@ export default function useVideo(): UseMusic {
 
     try {
       const res = await ReplicateAPI.generateVideo(prompt)
+      if (typeof res[0] !== 'string') throw new Error('Something went wrong.')
       setVideo(res[0])
     } catch (error: any) {
       if (error?.response?.status === 403) {
