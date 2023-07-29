@@ -2,7 +2,7 @@
 
 import * as z from 'zod'
 import Heading from '@/components/Heading'
-import { Music, VideoIcon } from 'lucide-react'
+import { VideoIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { formSchema } from './constant'

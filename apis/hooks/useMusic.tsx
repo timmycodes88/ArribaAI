@@ -22,6 +22,7 @@ export default function useMusic(): UseMusic {
 
     try {
       const res = await ReplicateAPI.generateImage(prompt)
+      console.log(res)
       setMusic(res.audio)
     } catch (error: any) {
       if (error?.response?.status === 403) {
