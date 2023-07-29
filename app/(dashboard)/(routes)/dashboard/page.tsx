@@ -1,3 +1,7 @@
 export default function DashboardPage() {
-  return <div>page</div>
+  return (
+    <div>
+      <div>Dashboard (Protected Page)</div>
+    </div>
+  )
 }
