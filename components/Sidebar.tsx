@@ -7,15 +7,21 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import FreeCounter from './FreeCounter'
 import { routes } from '@/constants'
+import { SheetClose } from './ui/sheet'
 
 const montserrat = Montserrat({ weight: '600', subsets: ['latin'] })
 
 interface SidebarProps {
   apiLimitCount: number
   isPro: boolean
+  isMobile?: boolean
 }
 
-export default function Sidebar({ apiLimitCount = 0, isPro }: SidebarProps) {
+export default function Sidebar({
+  apiLimitCount = 0,
+  isPro,
+  isMobile = false,
+}: SidebarProps) {
   const pathname = usePathname()
 
   return (
@@ -39,10 +45,19 @@ export default function Sidebar({ apiLimitCount = 0, isPro }: SidebarProps) {
               href={href}
               key={href}
             >
-              <div className='flex items-center flex-1'>
-                <Icon className={cn('h-6 w-6 mr-3', color)} />
-                {label}
-              </div>
+              {isMobile ? (
+                <SheetClose>
+                  <div className='flex items-center flex-1'>
+                    <Icon className={cn('h-6 w-6 mr-3', color)} />
+                    {label}
+                  </div>
+                </SheetClose>
+              ) : (
+                <div className='flex items-center flex-1'>
+                  <Icon className={cn('h-6 w-6 mr-3', color)} />
+                  {label}
+                </div>
+              )}
             </Link>
           ))}
         </div>

@@ -2,7 +2,12 @@
 
 import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import Sidebar from '@/components/Sidebar'
 import useHydrated from '@/hooks/useHydrated'
 
@@ -24,7 +29,7 @@ export default function MobileSideBar({
           </Button>
         </SheetTrigger>
         <SheetContent side='left' className='p-0'>
-          <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
+          <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} isMobile />
         </SheetContent>
       </Sheet>
     )
