@@ -4,7 +4,7 @@ import LandingNavbar from '@/components/LandingNavbar'
 
 export default function LandingPage() {
   return (
-    <div className='h-full'>
+    <div className='h-full w-full'>
       <LandingNavbar />
       <LandingHero />
       <LandingContent />
